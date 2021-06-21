@@ -1,0 +1,23 @@
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"状态栏
+map <C-n> :NERDTreeToggle<CR>
+set laststatus=2  "永远显示状态栏
+let g:airline_powerline_fonts = 1  " 支持 powerline 字体
+let g:airline#extensions#tabline#enabled = 1 "显示窗口tab和buffer
+
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'"状态栏1"
+"end1
+call plug#end()
